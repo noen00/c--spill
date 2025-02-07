@@ -7,6 +7,8 @@
 #include <atomic>
 extern int bevegeEx;
 extern int bevegeEy;
+extern int speed;
+
 int arr[6] = {1,2,3,4,5,6};
 int size = sizeof(arr) / sizeof(arr[0]);
 std::atomic<bool> running(false);
@@ -35,6 +37,6 @@ while(!running){
 			red=1;	
 		};
 
-        std::this_thread::sleep_for(std::chrono::nanoseconds(200000000));
+        std::this_thread::sleep_for(std::chrono::nanoseconds(200000000 / speed));
 }
 }
